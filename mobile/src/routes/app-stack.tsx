@@ -14,7 +14,7 @@ function AppStack() {
             <Navigator screenOptions={{ headerShown: false }}>
                 <Screen name="Landing" component={ Landing }></Screen>
                 <Screen name="GiveClasses" component={ GiveClasses }></Screen>
-                <Screen name="Study" component = {Tabs} ></Screen>
+                <Screen name="Study" component={ Tabs } ></Screen>
             </Navigator>
         </NavigationContainer>
     );

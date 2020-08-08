@@ -1,11 +1,35 @@
 import { StyleSheet } from 'react-native'
 
+import light_mode from '../../assets/colors/light_mode'
+import dark_mode from '../../assets/colors/dark_mode'
+
 const styles = StyleSheet.create({
     container : {
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#8257e5',
         padding: 40,
+    },
+
+    containerLight : {
+        backgroundColor: light_mode.landingColor,
+    },
+
+    containerDark : {
+        backgroundColor: dark_mode.landingColor,
+    },
+
+    header: {
+        justifyContent: 'flex-start'
+
+    },
+
+    buttonBack: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 56,
+        width: 56,
+        marginLeft: -24,
     },
 
     content: {

@@ -1,11 +1,20 @@
 import { StyleSheet } from 'react-native'
 
+import light_mode from '../../assets/colors/light_mode'
+import dark_mode from '../../assets/colors/dark_mode'
+
 const styles = StyleSheet.create({
-    container : {
+    container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#8257e5',
         padding: 40,
+    },
+    containerLight : {
+        backgroundColor: light_mode.landingColor,
+    },
+
+    containerDark : {
+        backgroundColor: dark_mode.landingColor,
     },
 
     banner: {
@@ -60,7 +69,22 @@ const styles = StyleSheet.create({
         maxWidth: 160,
         lineHeight: 20,
         marginTop: 40,
-    }
+    },
+
+    footer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+
+    buttonThemeMode: {
+        marginTop: 32,
+        height: 64,
+        width: 64,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 });
 
 export default styles;

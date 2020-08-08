@@ -1,18 +1,36 @@
-import React from 'react';
-import { View, Text, Image, ImageBackground, Linking } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, ImageBackground, Linking, Image } from 'react-native';
+import { RectButton, BorderlessButton } from 'react-native-gesture-handler';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 //Imagens
 import bgImage from '../../assets/images/give-classes-background.png'
+import back from '../../assets/images/icons/back.png'
 
 //Estilos
 import styles from './styles'
-import { RectButton } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
 
+interface Params {
+    params: {
+        theme: boolean;
+    },
+    name: string;
+    key: string;
+};
 
 function GiveClasses() {
 
     const navigation = useNavigation();
+    const params = useRoute<Params>().params;
+    const [styleTheme, setStyleTheme] = useState(styles.containerLight);
+
+    useEffect(() => {
+        if (params.theme) {
+            setStyleTheme(styles.containerLight);
+        } else {
+            setStyleTheme(styles.containerDark);
+        }
+    });
 
     async function handleNavigateToWebForm() {
         const can = await Linking.canOpenURL("http://192.168.1.10:3000/give-classes");
@@ -26,8 +44,13 @@ function GiveClasses() {
     }
 
     return(
-        <View style={styles.container}>
+        <View style={[styles.container, styleTheme]}>
             <ImageBackground resizeMode='contain' source={ bgImage } style={styles.content}>
+                <View style={styles.header}>
+                    <BorderlessButton onPress={() => {navigation.goBack()}} style={styles.buttonBack}>
+                        <Image source={back}/>
+                    </BorderlessButton>
+                </View>
                 <Text style={styles.title}>
                     Quer ser um Proffy?
                 </Text>

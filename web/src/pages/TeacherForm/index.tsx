@@ -73,7 +73,7 @@ function TeacherForm() {
 
     return(
         <div id="page-teacher-form" className="container">
-            <PageHeader title="Olá, Proffy! Que incrível que você quer dar aulas!" description="O primeiro passo é preencher este formulário de inscrição"/>
+            <PageHeader theme={true} title="Olá, Proffy! Que incrível que você quer dar aulas!" description="O primeiro passo é preencher este formulário de inscrição"/>
             <main>
                 <form onSubmit={ handleSubmit }>
                     <fieldset>

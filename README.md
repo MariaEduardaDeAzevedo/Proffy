@@ -23,5 +23,10 @@ Iniciado o desenvolvimento do front-end mobile com React Native.
 Foi desenvolvida a Landing Page, o esqueleto das páginas de listagem e de favoritos e uma página para os interessados em se tornarem Proffy, juntamente com as rotas da aplicação.
 Na página para os interessados em se tornarem um professor na plataforma, implementei um botão de redirecionamento para o formulário na plataforma web, já que, graças ao design responsivo, a experiência de qualidade para o usuário pelo mobile será ainda mantida.
 
+### Dia 5 - Back-end e front-end mobile conectados
+Concluido o front-end mobile, foi o momento de conectá-lo com a nossa API REST e finalmente finalizar o projeto programado até então.
+
 #### Ideias a serem implementadas
 - Adicionar uma nova funcionalidade, na qual poderemos criar grupos de professores, que podem representar uma instituição/curso, e deixar o ambiente mais propício para uma roupagem de EAD. 
+- Implementar a parte extra de desafios deixados
+- Dark mode para mobile e web (já iniciado!)

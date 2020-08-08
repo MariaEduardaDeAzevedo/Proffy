@@ -12,6 +12,15 @@ import api from '../../services/api';
 
 function TeacherList() {
 
+    const [theme, setTheme] = useState(true);
+
+    useEffect(() => {
+        var query = window.location.search.slice(1);
+        var mode = query.split('?')[0].split("=")[1];
+
+        setTheme(mode === "true" ? true : false);
+    })
+
     const [subject, setSubject] = useState('');
     const [week_day, setWeekDay] = useState('');
     const [time, setTime] = useState('');
@@ -36,8 +45,8 @@ function TeacherList() {
     }, [week_day, subject, time]);
 
     return(
-        <div id="page-teacher-list">
-            <PageHeader title="Estes são os Proffys disponíveis!">
+        <div id="page-teacher-list" style={{backgroundColor: theme ? "#F0F0F7" : "#636263"}}>
+            <PageHeader theme={theme} title="Estes são os Proffys disponíveis!">
                 <div id="search-teachers">
                     <Input name="Disciplina" id="subject" placeholder="Ex. Matemática"
                         value={subject}

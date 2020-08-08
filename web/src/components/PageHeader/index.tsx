@@ -10,12 +10,13 @@ import './styles.css'
 
 interface Properties {
     title: string;
+    theme: boolean;
     description?: string;
 }
 
 const PageHeader: React.FC<Properties> = (props) => {
     return (
-        <header className="page-header">
+        <header className="page-header" style={{backgroundColor: props.theme ? "#8257E5" : "#261b40"}}>
             <div className="top-bar-container">
                 <Link to="/">
                     <img src={ back } alt="Voltar"></img>

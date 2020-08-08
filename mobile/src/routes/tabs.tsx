@@ -1,15 +1,39 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons'
+import { StyleSheet } from "react-native";
 
 import TeacherList from '../pages/TeacherList';
 import Favorites from '../pages/Favorites';
+import { useRoute, useNavigation } from '@react-navigation/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
+const styles = StyleSheet.create({
+    tst : {
+        backgroundColor: "#000",
+    }
+})
+
+interface Params {
+    params: {
+        theme: boolean;
+    },
+    name: string;
+    key: string;
+};
+
 function Tabs() {
+
+    const theme = useRoute<Params>().params.theme;
+    const navigation = useNavigation();
+
+    console.log(theme)
+
     return(
-        <Navigator tabBarOptions={
+        <Navigator
+        tabBarOptions={
             {
             style: {
                 elevation: 0,
@@ -36,7 +60,7 @@ function Tabs() {
             inactiveTintColor: '#c1bccc',
             activeTintColor: '#32264d',
         }}>
-            <Screen name="TeacherList" component={TeacherList}
+            <Screen name="TeacherList" component={TeacherList} 
                 options={{
                     tabBarLabel: 'Proffys',
                     tabBarIcon: ({color, size, focused}) => {
@@ -60,4 +84,10 @@ function Tabs() {
     );
 }
 
+
+/**
+ * options={{
+                    
+                }}
+ */
 export default Tabs;
